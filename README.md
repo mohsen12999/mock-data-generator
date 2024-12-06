@@ -1,6 +1,6 @@
 # Generate Mock Data
 
-it's a fun project for making random data for testing in databases.
+it's a fun project for making random data for testing in databases like [Mackoroo](https://www.mockaroo.com/).
 
 ## TODO
 
@@ -21,4 +21,5 @@ it's a fun project for making random data for testing in databases.
 [ ] - add gender option
 [ ] - phone number option
 [ ] - price number option
+[ ] - email option
 [ ] - address option
