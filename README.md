@@ -23,3 +23,9 @@ it's a fun project for making random data for testing in databases like [Mackoro
 - [ ] price number option
 - [ ] email option
 - [ ] address option
+
+## download and run project
+
+- clone project `git clone https://github.com/mohsen12999/generate-mock-data`
+- add dependency with npm: `npm i` or yarn: `yarn install`
+- run project with npm: `npm run dev` or yarn: `yarn dev`
