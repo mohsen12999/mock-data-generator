@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import DataRow from './DataRow.vue';
+import IdRow from './IdRow.vue';
 
 // import { ref } from "vue";
 
@@ -22,16 +23,9 @@ const downloadfile = () => {
 <template>
   <!-- <h1>{{ msg }}</h1> -->
 
-  <div class="card"></div>
-
   <div class="card">
 
-    <div class="row">
-      <label for="add_id">
-        <input type="checkbox" name="add_id" id="add_id" />
-        اضافه کردن شماره برای ستون‌ها (id)
-      </label>
-    </div>
+    <IdRow />
 
    <DataRow row_name="first_name" row_type="first_name" />
    <DataRow row_name="last_name" row_type="last_name" />
@@ -44,4 +38,5 @@ const downloadfile = () => {
     <button type="button" @click="downloadfile()">ساخت فایل</button>
   </div>
 </template>
+
 
