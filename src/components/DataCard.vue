@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import DataRow from './DataRow.vue';
 
-defineProps<{ msg: string }>();
+// import { ref } from "vue";
+
+// defineProps<{ msg: string }>();
 
 // const count = ref(0)
 const downloadfile = () => {
@@ -25,26 +27,16 @@ const downloadfile = () => {
   <div class="card">
 
     <div class="row">
-      <label for="number">
-        <input type="checkbox" name="" id="" />
-        add id for table
+      <label for="add_id">
+        <input type="checkbox" name="add_id" id="add_id" />
+        اضافه کردن شماره برای ستون‌ها (id)
       </label>
     </div>
 
-    <div class="row">
-      <input type="text" name="" id="" />
-      <select name="" id="">
-        <option value="number">عدد</option>
-        <option value="first_name">نام</option>
-        <option value="last_name">نام خانوادگی</option>
-        <option value="email">ایمیل</option>
-        <option value="city">شهر</option>
-        <option value="country">کشور</option>
-      </select>
-      <input type="number" class="empty_percentage" name="" id="" value="0" />
-      درصد خالی بودن
-      <button type="button">حذف ستون</button>
-    </div>
+   <DataRow row_name="first_name" row_type="first_name" />
+   <DataRow row_name="last_name" row_type="last_name" />
+   <DataRow row_name="email" row_type="email" />
+   <DataRow row_name="age" row_type="number" />
 
   </div>
 
@@ -53,11 +45,3 @@ const downloadfile = () => {
   </div>
 </template>
 
-<style scoped>
-.card>* {
-  margin-right: 10px;
-}
-.empty_percentage{
-  width: 3rem;
-}
-</style>
