@@ -35,6 +35,8 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
+      - name: make package.lock for npm ci
+        run: rm -rf node_modules && yarn install --frozen-lockfile
       - name: Install dependencies
         run: npm ci
       - name: Build
