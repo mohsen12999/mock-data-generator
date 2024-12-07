@@ -6,12 +6,18 @@
      <div class="row">
       <input type="text" name="" id="" :value="row_name" />
       <select name="" id="" :value="row_type">
-        <option value="number">عدد</option>
-        <option value="first_name">نام</option>
-        <option value="last_name">نام خانوادگی</option>
-        <option value="email">ایمیل</option>
-        <option value="city">شهر</option>
-        <option value="country">کشور</option>
+        
+        <option value="number">number</option>
+        <option value="first_name">first_name</option>
+        <option value="last_name">last_name</option>
+        <option value="city">city</option>
+        <option value="country">country</option>
+        <option value="email">email</option>
+        <option value="persian_number">عدد فارسی</option>
+        <option value="persian_first_name">نام</option>
+        <option value="persian_last_name">نام خانوادگی</option>
+        <option value="persian_city">شهر</option>
+        <option value="persian_country">کشور</option>
       </select>
       درصد خالی بودن:
       <input type="number" class="empty_percentage" name="" id="" value="0" />
