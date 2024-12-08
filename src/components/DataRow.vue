@@ -19,6 +19,15 @@ const selectChangeFunction = (e:Event) => {
   }
 };
 
+const removeColumn = (e:MouseEvent) =>{
+  if(!confirm("are you sure?")){
+    return;
+  }
+  const btn = e.target as HTMLButtonElement;
+  const row =  btn.parentElement;
+  row?.remove()
+}
+
 </script>
 
 <template>
@@ -62,7 +71,7 @@ const selectChangeFunction = (e:Event) => {
 
     Null percent:
     <input type="number" class="empty_percentage" name="" id="" value="0" />
-    <button type="button">X</button>
+    <button type="button" @click="removeColumn">X</button>
   </div>
 </template>
 
@@ -87,7 +96,8 @@ const selectChangeFunction = (e:Event) => {
 }
 
 .min_number_value,
-.max_number_value {
+.max_number_value,
+.decimal_number_value {
   width: 3rem;
 }
 </style>
