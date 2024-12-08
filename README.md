@@ -2,11 +2,13 @@
 
 it's a fun project for making random data for testing in databases like [Mackoroo](https://www.mockaroo.com/).
 
+click you can see live [demo](generate-mock-data.vercel.app).
+
 ## TODO
 
+- [x] live version
 - [ ] simple ui
 - [ ] save in file
-- [ ] live version
 - [ ] show output in textarea
 - [ ] make sql data
 - [ ] add more field button
