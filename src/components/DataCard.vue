@@ -1,12 +1,20 @@
 <script setup lang="ts">
-import DataRow from './DataRow.vue';
+import { ref } from "vue";
+
 import IdRow from './IdRow.vue';
+import DataRow from './DataRow.vue';
 
-// import { ref } from "vue";
+const componentList = ref([
+  {name:"first_name",type:"first_name"},
+  {name:"last_name",type:"last_name"},
+  {name:"email",type:"email"},
+  {name:"age",type:"number"}
+]);
 
-// defineProps<{ msg: string }>();
+const addColumnFunction = () => {
+  componentList.value.push({name:"first_name",type:"first_name"});
+}
 
-// const count = ref(0)
 const downloadfile = () => {
   console.log("downloadfile");
 
@@ -23,19 +31,19 @@ const downloadfile = () => {
 <template>
   <!-- <h1>{{ msg }}</h1> -->
 
-  <div class="card">
+  <div id="data_row_card" class="card">
 
     <IdRow />
 
-   <DataRow row_name="first_name" row_type="first_name" />
-   <DataRow row_name="last_name" row_type="last_name" />
-   <DataRow row_name="email" row_type="email" />
-   <DataRow row_name="age" row_type="number" />
+    <div id="component-container">
+      <DataRow v-for="(props , index) in componentList" :row_name="props.name" :row_type="props.type" :key="index" />
+    </div>
 
+   <button type="button" @click="addColumnFunction">+ Add new Column</button>
   </div>
 
   <div class="card">
-    <button type="button" @click="downloadfile()">ساخت فایل</button>
+    <button type="button" @click="downloadfile()">Generate file</button>
   </div>
 </template>
 
