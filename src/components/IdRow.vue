@@ -1,9 +1,8 @@
-<script setup></script>
 
 <template>
     <div class="row">
         <label for="add_id">
-            <input type="checkbox" name="add_id" id="add_id" />
+            <input type="checkbox" name="add_id" class="add_id_flag" />
             add Id for every column start from
             <input type="number" class="id_starter_number" value="1" />
         </label>

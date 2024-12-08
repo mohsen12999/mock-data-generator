@@ -5,36 +5,38 @@ const props = defineProps<{ row_name: string; row_type: string }>();
 
 const row_type_var = ref(props.row_type);
 
-const selectChangeFunction = (e:Event) => {
-
+const selectChangeFunction = (e: Event) => {
   const target = e.target;
-  
-  if(target){
+
+  if (target) {
     const selectElement = target as HTMLSelectElement;
-    const value = selectElement.value
-    
-    if(value){
+    const value = selectElement.value;
+
+    if (value) {
       row_type_var.value = value;
     }
   }
 };
 
-const removeColumn = (e:MouseEvent) =>{
-  if(!confirm("are you sure?")){
+const removeColumn = (e: MouseEvent) => {
+  if (!confirm("are you sure?")) {
     return;
   }
   const btn = e.target as HTMLButtonElement;
-  const row =  btn.parentElement;
-  row?.remove()
-}
-
+  const row = btn.parentElement;
+  row?.remove();
+};
 </script>
 
 <template>
   <div class="row">
-    <input type="text" name="" id="" :value="row_name" />
+    <input type="text" class="column_name" :value="row_name" />
 
-    <select name="" id="" :value="row_type_var" @change="selectChangeFunction">
+    <select
+      class="column_type"
+      :value="row_type_var"
+      @change="selectChangeFunction"
+    >
       <option value="number">number</option>
       <option value="first_name">first_name</option>
       <option value="last_name">last_name</option>
@@ -50,27 +52,15 @@ const removeColumn = (e:MouseEvent) =>{
 
     <span v-if="row_type_var == 'number'">
       min:
-      <input type="number" class="min_number_value" name="" id="" value="0" />
+      <input type="number" class="min_number_value" value="0" />
       max:
-      <input
-        type="number"
-        class="max_number_value"
-        name=""
-        id=""
-        value="1000"
-      />
+      <input type="number" class="max_number_value" value="1000" />
       decimal:
-      <input
-        type="number"
-        class="decimal_number_value"
-        name=""
-        id=""
-        value="0"
-      />
+      <input type="number" class="decimal_number_value" value="0" />
     </span>
 
     Null percent:
-    <input type="number" class="empty_percentage" name="" id="" value="0" />
+    <input type="number" class="empty_percentage" value="0" />
     <button type="button" @click="removeColumn">X</button>
   </div>
 </template>
