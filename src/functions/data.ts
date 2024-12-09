@@ -1,6 +1,8 @@
+import { generatedFakeField } from "./faker";
+import { IColumnType } from "./interfaces";
 
 export function getDataFromPage() {
-    // read data from page
+  // read data from page
   const elements_row = document.querySelectorAll("div#data_row_card div.row");
 
   // read id
@@ -16,7 +18,7 @@ export function getDataFromPage() {
   const id_starter_number = (input_number_element as HTMLInputElement).value;
 
   // read every column
-  const column_data = [];
+  const column_data: IColumnType[] = [];
   for (let index = 1; index < elements_row.length; index++) {
     const element_row = elements_row[index];
 
@@ -62,6 +64,68 @@ export function getDataFromPage() {
     }
   }
 
-  return {add_id_flag, id_starter_number, column_data}
+  const output_row_count_element = document.querySelector(
+    "#format_row_card input.output_row_count"
+  );
+  const output_row_count = (output_row_count_element as HTMLInputElement).value;
 
+  const output_type_element = document.querySelector(
+    "#format_row_card select.output_type"
+  );
+  const output_type = (output_type_element as HTMLSelectElement).value;
+
+  return {
+    add_id_flag,
+    id_starter_number,
+    column_data,
+    output_row_count,
+    output_type,
+  };
 }
+
+export function generatedData(
+  add_id_flag: boolean,
+  id_starter_number: string,
+  column_data: IColumnType[],
+  output_row_count: string
+) {
+  const header: string[] = [];
+
+  if (add_id_flag) {
+    header.push("id");
+  }
+
+  for (let index = 0; index < column_data.length; index++) {
+    header.push(column_data[index].column_name);
+  }
+
+  const body: (string | undefined)[][] = [];
+  const row_count = Number(output_row_count);
+
+  for (let row_index = 0; row_index < row_count; row_index++) {
+    const row_data = [];
+    if (add_id_flag) {
+      row_data.push((Number(id_starter_number) + row_index).toString());
+    }
+
+    for (let index = 0; index < column_data.length; index++) {
+      const column = column_data[index];
+
+      row_data.push(
+        generatedFakeField(
+          column.column_type,
+          column.empty_percentage,
+          column.min_number_value,
+          column.max_number_value,
+          column.decimal_number_value
+        )
+      );
+    }
+
+    body.push(row_data);
+  }
+
+  return { header, body };
+}
+
+export function generatedSqlFromData() {}
