@@ -3,7 +3,7 @@ import { ref } from "vue";
 
 import IdRow from "./IdRow.vue";
 import DataRow from "./DataRow.vue";
-import { getDataFromPage } from "../functions/data";
+import { generatedData, generatedSqlFromData, getDataFromPage } from "../functions/data";
 
 const componentList = ref([
   { name: "first_name", type: "first_name" },
@@ -17,8 +17,22 @@ const addColumnFunction = () => {
 };
 
 const generateScript = () => {
-
   const input_data = getDataFromPage();
+
+  console.log({ input_data });
+
+  const output_data = generatedData(
+    input_data.add_id_flag,
+    input_data.id_starter_number,
+    input_data.column_data,
+    input_data.output_type
+  );
+
+  console.log(output_data);
+
+  if (input_data.output_type == "sql") {
+    generatedSqlFromData();
+  }
 
   // generate data
 
@@ -50,16 +64,26 @@ const generateScript = () => {
     <button type="button" @click="addColumnFunction">+ Add new Column</button>
   </div>
 
-  <div class="card">
+  <div id="format_row_card" class="card">
+    Row Count:
+    <input type="number" class="output_row_count" value="10" />
+    format:
+    <select class="output_type">
+      <option value="sql">SQL</option>
+    </select>
     <button type="button" @click="generateScript()">Generate Script</button>
   </div>
 
-  <textarea name="" id="script_textarea"></textarea>
+  <textarea id="script_textarea"></textarea>
 </template>
 
 <style scoped>
 #script_textarea {
   width: 100%;
   display: none;
+}
+
+#format_row_card input.output_row_count {
+  width: 3rem;
 }
 </style>
