@@ -42,5 +42,5 @@ export function generatedFakeNumber(
   const max_decimal = Math.pow(10, decimal_number);
   const decimal_part = Math.floor(Math.random() * max_decimal);
 
-  return random_number.toString() + decimal_part.toString();
+  return random_number.toString() + "." + decimal_part.toString();
 }
