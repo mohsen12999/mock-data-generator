@@ -38,14 +38,16 @@ const removeColumn = (e: MouseEvent) => {
       @change="selectChangeFunction"
     >
       <option value="number">number</option>
-      <option value="first_name">first_name</option>
-      <option value="last_name">last_name</option>
+      <option value="first_name">first name</option>
+      <option value="last_name">last name</option>
+      <option value="fullname">full name</option>
       <option value="city">city</option>
       <option value="country">country</option>
       <option value="email">email</option>
       <option value="persian_number">عدد فارسی</option>
       <option value="persian_first_name">نام</option>
       <option value="persian_last_name">نام خانوادگی</option>
+      <option value="persian_city">کدملی</option>
       <option value="persian_city">شهر</option>
       <option value="persian_country">کشور</option>
     </select>
