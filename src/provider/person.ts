@@ -1,5 +1,5 @@
 // with help of PHP Faker
-import { RandomElement } from "../functions/helper";
+import { randomElement } from "../functions/helper";
 
 const firstNameMale = [
   "Aaron",
@@ -3493,8 +3493,8 @@ const lastName = [
 const firstName = [...firstNameMale, ...firstNameFemale];
 
 // Export Functions
-export const generateFakeFirstName = () =>  RandomElement(firstName);
+export const generateFakeFirstName = () =>  randomElement(firstName);
 
-export const generateFakeLastName = () => RandomElement(lastName)
+export const generateFakeLastName = () => randomElement(lastName)
 
 export const generateFakeFullname = () => generateFakeFirstName + " " + generateFakeLastName;
