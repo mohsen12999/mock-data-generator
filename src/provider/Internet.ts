@@ -77,6 +77,10 @@ export const generateUserName = () => {
     return randomElement([userNameFormat1,userNameFormat2,userNameFormat3])();
 }
 
-export const domainName = () => {
+export const generateFakeDomainName = () => {
     return randomElement(lastNameAscii) + '.'  + randomElement(tld);
+}
+
+export const generateFakeEmail = () => {
+    return randomElement(lastNameAscii) + "@" + randomElement(firstNameAscii) + '.'  + randomElement(safeEmailTld);
 }
