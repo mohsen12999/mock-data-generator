@@ -128,4 +128,7 @@ export function generatedData(
   return { header, body };
 }
 
-export function generatedSqlFromData() {}
+export function generatedSqlFromData(header:string[], body:(string | undefined)[][]) {
+  const sql = "INSERT INTO `table_name` (`" + header.join("`, `") + "`)\nVALUES\n";
+  return sql + body.map((row_data) => "  (" + row_data.join(", ") + "),").join("\n");
+}
