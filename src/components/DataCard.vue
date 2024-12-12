@@ -25,7 +25,7 @@ const generateScript = () => {
     input_data.add_id_flag,
     input_data.id_starter_number,
     input_data.column_data,
-    input_data.output_type
+    input_data.output_row_count,
   );
 
   console.log(output_data);
