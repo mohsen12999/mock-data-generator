@@ -673,7 +673,7 @@ const generatePostcode = () => {
   return randomPostcode();
 };
 
-export const addressFormats = () => {
+export const generateFakeAddress = () => {
   // "{{streetAddress}}\n{{city}}, {{stateAbbr}} {{postcode}}",
   return (
     generateFakeStreetAddress +
