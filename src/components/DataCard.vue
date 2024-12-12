@@ -31,7 +31,12 @@ const generateScript = () => {
   console.log(output_data);
 
   if (input_data.output_type == "sql") {
-    generatedSqlFromData();
+    const output = generatedSqlFromData(output_data.header, output_data.body);
+    console.log({output});
+    const script_textarea = document.getElementById("script_textarea") as HTMLTextAreaElement;
+    script_textarea.value = output;
+    script_textarea.style.display = "block";
+
   }
 
   // generate data
@@ -69,7 +74,7 @@ const generateScript = () => {
     <input type="number" class="output_row_count" value="10" />
     format:
     <select class="output_type">
-      <option value="sql">SQL</option>
+      <option value="sql">SQL Script</option>
     </select>
     <button type="button" @click="generateScript()">Generate Script</button>
   </div>
@@ -80,6 +85,7 @@ const generateScript = () => {
 <style scoped>
 #script_textarea {
   width: 100%;
+  field-sizing: content;
   display: none;
 }
 
