@@ -1191,7 +1191,7 @@ const generateBuildingName = () => {
 const generateStreetAddress = () =>
   generateStreetName() + " " + generateBuildingName();
 
-const generatePostcode = () => randomNumber(10000000, 9999999);
+const generatePostcode = () => randomNumber(10000000, 99999999);
 
 export const generatePersianAddress = () => {
   //{{city}} {{streetAddress}}',

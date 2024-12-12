@@ -656,7 +656,7 @@ const generateFakeStreetAddress = () => {
     generateBuildingNumber() + " " + generateFakeStreetName();
   // "{{buildingNumber}} {{streetName}} {{secondaryAddress}}"
   const streetAddress2 = () =>
-    streetAddress1 + " " + generateSecondaryAddress();
+    streetAddress1() + " " + generateSecondaryAddress();
 
   const randomStreetAddress = randomElement([streetAddress1, streetAddress2]);
 
@@ -667,17 +667,15 @@ const generatePostcode = () => {
   // "#####"
   const postcode1 = () => randomNumber(10000, 99999).toString();
   // "#####-####"
-  const postcode2 = () => postcode1 + "-" + randomNumber(1000, 9999).toString();
+  const postcode2 = () => postcode1() + "-" + randomNumber(1000, 9999).toString();
 
-  const randomPostcode = randomElement([postcode1, postcode2]);
-
-  return randomPostcode();
+  return randomElement([postcode1, postcode2])();
 };
 
 export const generateFakeAddress = () => {
   // "{{streetAddress}}\n{{city}}, {{stateAbbr}} {{postcode}}",
   return (
-    generateFakeStreetAddress +
+    generateFakeStreetAddress() +
     "\n" +
     generateFakeCity() +
     ", " +

@@ -110,22 +110,22 @@ const titleMale = ['آقای', 'استاد', 'دکتر', 'مهندس'];
 const titleFemale = ['خانم', 'استاد', 'دکتر', 'مهندس'];
 
 const generateMaleName = () => {
-    const simpleMaleName = randomElement(firstNameMale) + ' ' + randomElement(lastName);
-    const maleNameWithTitle = randomElement(titleMale) + ' ' + simpleMaleName;
+    const simpleMaleName = () => randomElement(firstNameMale);
+    const maleNameWithTitle = () => randomElement(titleMale) + ' ' + simpleMaleName();
 
-    return randomElement([simpleMaleName,simpleMaleName,simpleMaleName, maleNameWithTitle]);
+    return randomElement([simpleMaleName,simpleMaleName,simpleMaleName, maleNameWithTitle])();
 }
 
 const generateFemaleName = () => {
-    const simpleFemaleName = randomElement(firstNameFemale) + ' ' + randomElement(lastName);
-    const femaleNameWithTitle = randomElement(titleFemale) + ' ' + simpleFemaleName;
+    const simpleFemaleName = () => randomElement(firstNameFemale);
+    const femaleNameWithTitle = () => randomElement(titleFemale) + ' ' + simpleFemaleName();
 
-    return randomElement([simpleFemaleName,simpleFemaleName,simpleFemaleName, femaleNameWithTitle]);
+    return randomElement([simpleFemaleName,simpleFemaleName,simpleFemaleName, femaleNameWithTitle])();
 }
 
 export const generatePersianFirstName = () => randomElement([generateMaleName, generateFemaleName])();
 export const generatePersianLastName = () => randomElement(lastName);
-export const generatePersianFullName = () => generatePersianFirstName + " " + generatePersianLastName;
+export const generatePersianFullName = () => generatePersianFirstName() + " " + generatePersianLastName();
 
 
 // https://fa.wikipedia.org/wiki/%DA%A9%D8%A7%D8%B1%D8%AA_%D8%B4%D9%86%D8%A7%D8%B3%D8%A7%DB%8C%DB%8C_%D9%85%D9%84%DB%8C#%D8%AD%D8%B3%D8%A7%D8%A8_%DA%A9%D8%B1%D8%AF%D9%86_%DA%A9%D8%AF_%DA%A9%D9%86%D8%AA%D8%B1%D9%84

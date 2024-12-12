@@ -3497,4 +3497,4 @@ export const generateFakeFirstName = () =>  randomElement(firstName);
 
 export const generateFakeLastName = () => randomElement(lastName)
 
-export const generateFakeFullname = () => generateFakeFirstName + " " + generateFakeLastName;
+export const generateFakeFullname = () => generateFakeFirstName() + " " + generateFakeLastName();
