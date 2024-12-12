@@ -8,7 +8,7 @@ click you can see live [demo](generate-mock-data.vercel.app).
 
 - [x] live version
 - [ ] simple ui
-- [ ] save in file
+- [x] save in file
 - [x] show output in textarea
 - [x] make sql data
 - [ ] add more field button

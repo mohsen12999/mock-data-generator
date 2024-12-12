@@ -30,13 +30,20 @@ const generateScript = () => {
 
   console.log(output_data);
 
-  if (input_data.output_type == "sql") {
+  if (input_data.output_type == "sql_script") {
     const output = generatedSqlFromData(output_data.header, output_data.body);
-    console.log({output});
     const script_textarea = document.getElementById("script_textarea") as HTMLTextAreaElement;
     script_textarea.value = output;
     script_textarea.style.display = "block";
-
+  } else if (input_data.output_type == "sql_file") {
+    const output = generatedSqlFromData(output_data.header, output_data.body);
+    const file = new Blob([output], { type: "text/plain" });
+    
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(file);
+    link.download = "query.sql";
+    link.click();
+    URL.revokeObjectURL(link.href);
   }
 
   // generate data
@@ -74,7 +81,9 @@ const generateScript = () => {
     <input type="number" class="output_row_count" value="10" />
     format:
     <select class="output_type">
-      <option value="sql">SQL Script</option>
+      <option value="sql_script">SQL Script</option>
+      <option value="sql_file">SQL file</option>
+      <!-- <option value="csv">CSV file</option> -->
     </select>
     <button type="button" @click="generateScript()">Generate Script</button>
   </div>
