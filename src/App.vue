@@ -7,12 +7,16 @@ import { version } from "../package.json"; // Import version from package.json
   <div>
     <h1 id="main_title">Data for Generate</h1>
     <span>
-      <a href="http://github.com/mohsen1299/generate-mock-data">
+      <a href="http://github.com/mohsen12999/generate-mock-data">
       version {{ version }}
         <img
           src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
-          alt="GitHub"
+          alt="GitHub logo"
+          loading="lazy"
+          title="GitHub logo"
+          aria-label="GitHub logo"
           id="github-logo"
+          target="_blank"
         />
       </a>
     </span>
