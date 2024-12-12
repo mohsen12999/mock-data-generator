@@ -9,22 +9,22 @@ click you can see live [demo](generate-mock-data.vercel.app).
 - [x] live version
 - [ ] simple ui
 - [ ] save in file
-- [ ] show output in textarea
-- [ ] make sql data
+- [x] show output in textarea
+- [x] make sql data
 - [ ] add more field button
 - [ ] csv data
 - [ ] sql command for create table
-- [ ] make id for rows
-- [ ] random number
-- [ ] add range for data
-- [ ] add option for empty
-- [ ] add name and family option
-- [ ] add country/city option
+- [x] make id for rows
+- [x] random number
+- [x] add range for data
+- [x] add option for empty
+- [x] add name and family option
+- [x] add country/city option
 - [ ] add gender option
 - [ ] phone number option
 - [ ] price number option
-- [ ] email option
-- [ ] address option
+- [x] email option
+- [x] address option
 
 ## download and run project
 
