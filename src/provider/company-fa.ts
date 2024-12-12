@@ -28,3 +28,5 @@ export const generatePersianCompany = () => {
 
     return randomElement([companyMaker1, companyMaker2, companyMaker3, companyMaker4])();
 }
+
+export const generatePersianContract = () => randomElement(contract)

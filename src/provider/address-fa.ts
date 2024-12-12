@@ -1202,7 +1202,7 @@ export const generatePersianAddress = () => {
   return randomElement([address1, address2])();
 };
 
-const country = ["ایران"];
+// const country = ["ایران"];
 
 const countries = [
   "افغانستان",

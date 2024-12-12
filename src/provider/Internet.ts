@@ -67,11 +67,11 @@ const generateFirstNameAscii = () => {
 
 export const generateUserName = () => {
     // '{{lastNameAscii}}.{{firstNameAscii}}'
-    const userNameFormat1 = () => randomElement(lastNameAscii) + "." + randomElement(firstNameAscii);
+    const userNameFormat1 = () => generateLastNameAscii() + "." + generateFirstNameAscii();
     // '{{firstNameAscii}}.{{lastNameAscii}}'
-    const userNameFormat2 = () => randomElement(firstNameAscii) + "." + randomElement(lastNameAscii);
+    const userNameFormat2 = () => generateFirstNameAscii()  + "." + generateLastNameAscii();
     // '{{firstNameAscii}}##'
-    const userNameFormat3 = () => randomElement(lastNameAscii) + randomNumber(10,99);
+    const userNameFormat3 = () => generateLastNameAscii() + randomNumber(10,99);
     // '?{{lastNameAscii}}'
 
     return randomElement([userNameFormat1,userNameFormat2,userNameFormat3])();

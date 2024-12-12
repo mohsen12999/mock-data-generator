@@ -604,6 +604,7 @@ const country = [
 ];
 
 export const generateFakeCountry = () => randomElement(country);
+export const generateFakeState = () => randomElement(state);
 
 export const generateFakeCity = () => {
   // "{{cityPrefix}} {{firstName}}"
