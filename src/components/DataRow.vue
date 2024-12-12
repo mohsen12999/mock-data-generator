@@ -41,15 +41,19 @@ const removeColumn = (e: MouseEvent) => {
       <option value="first_name">first name</option>
       <option value="last_name">last name</option>
       <option value="fullname">full name</option>
-      <option value="city">city</option>
-      <option value="country">country</option>
       <option value="email">email</option>
-      <option value="persian_number">عدد فارسی</option>
+      <option value="country">country</option>
+      <option value="city">city</option>
+      <option value="address">address</option>
+      <option value="email">website</option>
+      <!--<option value="persian_number">عدد فارسی</option>-->
       <option value="persian_first_name">نام</option>
       <option value="persian_last_name">نام خانوادگی</option>
-      <option value="persian_city">کدملی</option>
-      <option value="persian_city">شهر</option>
+      <option value="persian_full_name">نام و نام خانوادگی</option>
+      <option value="persian_id">کدملی</option>
       <option value="persian_country">کشور</option>
+      <option value="persian_city">شهر</option>
+      <option value="persian_address">آدرس</option>
     </select>
 
     <span v-if="row_type_var == 'number'">
