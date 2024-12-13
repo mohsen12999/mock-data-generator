@@ -11,7 +11,7 @@ click you can see live [demo](generate-mock-data.vercel.app).
 - [x] save in file
 - [x] show output in textarea
 - [x] make sql data
-- [ ] add more field button
+- [x] add more field button
 - [ ] csv data
 - [ ] sql command for create table
 - [x] make id for rows
@@ -25,6 +25,8 @@ click you can see live [demo](generate-mock-data.vercel.app).
 - [ ] price number option
 - [x] email option
 - [x] address option
+- [ ] pwa for use as an app
+- [ ] testing with github action
 
 ## download and run project
 
