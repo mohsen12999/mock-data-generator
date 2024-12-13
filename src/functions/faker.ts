@@ -3,7 +3,6 @@ import { generatePersianAddress, generatePersianCity, GeneratePersianCountry } f
 import { generateFakeDomainName, generateFakeEmail } from "../provider/Internet";
 import { generateFakeFirstName, generateFakeFullname, generateFakeLastName } from "../provider/person";
 import { generateNationalCode, generatePersianFirstName, generatePersianFullName, generatePersianLastName } from "../provider/person-fa";
-import { randomNumber } from "./helper";
 
 export function generatedFakeField(
   field_type: string,
@@ -12,14 +11,14 @@ export function generatedFakeField(
   min_number_value?: string,
   max_number_value?: string,
   decimal_number_value?: string
-): string | undefined {
+): string| Number | null {
 
   if (empty_percentage !== "0" && empty_percentage !== "") {
-    if(empty_percentage === "100") return undefined;
+    if(empty_percentage === "100") return null;
 
-    const data_chance = Math.floor(Math.random() * 100);
+    const data_chance = Math.random() * 100;
     if (data_chance < Number(empty_percentage)) {
-      return undefined;
+      return null;
     }
   }
 
@@ -80,19 +79,29 @@ export function generatedFakeNumber(
   min_number_value?: string,
   max_number_value?: string,
   decimal_number_value?: string
-): string {
+): Number {
   const min_number = Number(min_number_value);
   const max_number = Number(max_number_value);
-  const decimal_number = Number(decimal_number_value);
-  const random_number = randomNumber(min_number, max_number);
+  const decimal_number_size = Number(decimal_number_value);
 
-  if (decimal_number === 0 || !decimal_number) {
-    return random_number.toString();
+  const random_number = Math.random() * (max_number - min_number + 1) + min_number;
+
+  if (decimal_number_size === 0 || !decimal_number_size) {
+    return Math.floor(random_number);
   }
 
-  // decimal part
-  const max_decimal = Math.pow(10, decimal_number);
-  const decimal_part = Math.floor(Math.random() * max_decimal);
+  // count decimal part
+  const random_number_string = random_number.toString();
+  const random_number_parts = random_number_string.split(".");
+  const decimal_part = random_number_parts[1];
 
-  return random_number.toString() + "." + decimal_part.toString();
+  if(decimal_part.length >= decimal_number_size) {
+    const decimal_part_string = decimal_part.substring(0, decimal_number_size);
+    return Number(random_number_parts+ "." + decimal_part_string);
+  }
+
+  // make decimal part
+  const max_decimal = Math.pow(10, decimal_number_size);
+  const new_decimal_part = Math.floor(Math.random() * max_decimal);
+  return Number(random_number_parts+ "." + new_decimal_part);
 }
