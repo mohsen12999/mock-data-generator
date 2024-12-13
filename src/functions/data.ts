@@ -1,5 +1,5 @@
 import { generatedFakeField } from "./faker";
-import { IColumnType } from "./interfaces";
+import { IColumnType, ITableColumnType } from "./interfaces";
 
 export function getDataFromPage() {
   // read data from page
@@ -99,7 +99,7 @@ export function generatedData(
     header.push(column_data[index].column_name);
   }
 
-  const body: (string | undefined)[][] = [];
+  const body: ITableColumnType[][] = [];
   const row_count = Number(output_row_count);
 
   for (let row_index = 0; row_index < row_count; row_index++) {
@@ -128,7 +128,7 @@ export function generatedData(
   return { header, body };
 }
 
-export function generatedSqlFromData(header:string[], body:(string | undefined)[][]) {
+export function generatedSqlFromData(header:string[], body: ITableColumnType[][]) {
   const sql = "INSERT INTO `table_name` (`" + header.join("`, `") + "`)\nVALUES\n";
   return sql + body.map((row_data) => "  (" + row_data.join(", ") + "),").join("\n");
 }

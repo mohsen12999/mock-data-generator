@@ -7,3 +7,5 @@ export interface IColumnType {
     max_number_value?: string;
     decimal_number_value?: string;
 }
+
+export type ITableColumnType = string|number|null;

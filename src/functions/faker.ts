@@ -3,6 +3,7 @@ import { generatePersianAddress, generatePersianCity, GeneratePersianCountry } f
 import { generateFakeDomainName, generateFakeEmail } from "../provider/Internet";
 import { generateFakeFirstName, generateFakeFullname, generateFakeLastName } from "../provider/person";
 import { generateNationalCode, generatePersianFirstName, generatePersianFullName, generatePersianLastName } from "../provider/person-fa";
+import { ITableColumnType } from "./interfaces";
 
 export function generatedFakeField(
   field_type: string,
@@ -11,7 +12,7 @@ export function generatedFakeField(
   min_number_value?: string,
   max_number_value?: string,
   decimal_number_value?: string
-): string| Number | null {
+): ITableColumnType {
 
   if (empty_percentage !== "0" && empty_percentage !== "") {
     if(empty_percentage === "100") return null;
@@ -79,7 +80,7 @@ export function generatedFakeNumber(
   min_number_value?: string,
   max_number_value?: string,
   decimal_number_value?: string
-): Number {
+): number {
   const min_number = Number(min_number_value);
   const max_number = Number(max_number_value);
   const decimal_number_size = Number(decimal_number_value);
