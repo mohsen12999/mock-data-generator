@@ -5,6 +5,7 @@ import {
   generateFakeLastName,
 } from "./person";
 
+// test for generateFakeFirstName function
 describe("testing generate fake first name", () => {
   const firstName = generateFakeFirstName();
 
@@ -32,6 +33,7 @@ describe("testing generate fake first name", () => {
   });
 });
 
+// test for generateFakeLastName function
 describe("testing generate fake last name", () => {
   const lastName = generateFakeLastName();
 
@@ -59,6 +61,7 @@ describe("testing generate fake last name", () => {
   });
 });
 
+// test for generateFakeFullname function
 describe("testing generate fake full name", () => {
   const fullName = generateFakeFullname();
 
