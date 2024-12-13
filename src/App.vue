@@ -10,7 +10,7 @@ import { version } from "../package.json"; // Import version from package.json
       <a href="http://github.com/mohsen12999/generate-mock-data" target="_blank" title="GitHub project address">
       version {{ version }}
         <img
-          src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+          src="./assets/Octicons-mark-github.png"
           alt="GitHub logo"
           loading="lazy"
           title="GitHub logo"
