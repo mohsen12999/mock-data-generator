@@ -27,6 +27,8 @@ click you can see live [demo](generate-mock-data.vercel.app).
 - [x] address option
 - [ ] pwa for use as an app
 - [ ] testing with github action
+- [ ] add date column
+- [ ] add boolean/flag
 
 ## download and run project
 
