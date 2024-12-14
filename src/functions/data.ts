@@ -103,7 +103,7 @@ export function generatedData(
   const row_count = Number(output_row_count);
 
   for (let row_index = 0; row_index < row_count; row_index++) {
-    const row_data = [];
+    const row_data: ITableColumnType[] = [];
     if (add_id_flag) {
       row_data.push((Number(id_starter_number) + row_index).toString());
     }
@@ -128,7 +128,30 @@ export function generatedData(
   return { header, body };
 }
 
-export function generatedSqlFromData(header:string[], body: ITableColumnType[][]) {
-  const sql = "INSERT INTO `table_name` (`" + header.join("`, `") + "`)\nVALUES\n";
-  return sql + body.map((row_data) => "  (" + row_data.join(", ") + "),").join("\n");
+export function generatedSqlFromData(
+  header: string[],
+  body: ITableColumnType[][],
+  table_name: string = "table_name"
+) {
+  const sql =
+    "INSERT INTO " + table_name + " (`" + header.join("`, `") + "`)\nVALUES\n";
+  return (
+    sql +
+    body
+      .map(
+        (row_data) =>
+          "  (" +
+          row_data
+            .map((column_value) =>
+              column_value == null
+                ? "NULL"
+                : typeof column_value === "string"
+                ? `"${column_value}"`
+                : column_value
+            )
+            .join(", ") +
+          "),"
+      )
+      .join("\n")
+  );
 }
