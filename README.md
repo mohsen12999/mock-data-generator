@@ -1,8 +1,39 @@
 # Generate Mock Data
 
-it's a fun project for making random data for testing in databases like [Mackoroo](https://www.mockaroo.com/).
+A simple project designed to create mock datasets for testing, prototyping, or demonstrating data-driven applications. With customizable options, this tool allows you to generate realistic datasets quickly and efficiently.
+
+Most of ideas com from [FakerPHP](https://github.com/FakerPHP/Faker) and [Mackoroo](https://www.mockaroo.com/).
 
 click you can see live [demo](generate-mock-data.vercel.app).
+
+## Features
+
+- **Customizable Data Schema**: Define your dataset structure and data types with ease.
+- **Multiple Data Types**: Supports various fields like integers, floats, strings, dates, and more.
+- **Randomized but Realistic**: Generates data with realistic constraints and patterns.
+- **CSV Export**: Save generated datasets to CSV for easy integration.
+- **Extensible**: Modify or extend the code to suit your specific use case.
+
+## Work on Project
+
+1. Clone the Project
+
+```sh
+git clone https://github.com/mohsen12999/generate-mock-data.git
+cd generate-mock-data
+```
+
+2. add dependency
+
+```sh
+npm install # or yarn install
+```
+
+3. run project
+
+```sh
+npm run dev # or yarn dev
+```
 
 ## TODO
 
@@ -26,12 +57,22 @@ click you can see live [demo](generate-mock-data.vercel.app).
 - [x] email option
 - [x] address option
 - [ ] pwa for use as an app
-- [ ] testing with github action
+- [x] testing with github action
 - [ ] add date column
 - [ ] add boolean/flag
+- [ ] move/rearrange column
 
-## download and run project
+## Contributing
 
-- clone project `git clone https://github.com/mohsen12999/generate-mock-data`
-- add dependency with npm: `npm i` or yarn: `yarn install`
-- run project with npm: `npm run dev` or yarn: `yarn dev`
+Contributions are welcome! Feel free to:
+
+- Submit bug reports or feature requests.
+- Fork the repository and submit pull requests for improvements.
+
+## License
+
+This project is licensed under the [GNU General Public License v3.0](./LICENSE).
+
+## Contact
+
+If you have any questions or feedback, please open an issue on the [GitHub repository](https://github.com/mohsen12999/generate-mock-data).
