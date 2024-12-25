@@ -1,8 +1,28 @@
-import { generateFakeAddress, generateFakeCity, generateFakeCountry } from "../provider/address";
-import { generatePersianAddress, generatePersianCity, GeneratePersianCountry } from "../provider/address-fa";
-import { generateFakeDomainName, generateFakeEmail } from "../provider/Internet";
-import { generateFakeFirstName, generateFakeFullname, generateFakeLastName } from "../provider/person";
-import { generateNationalCode, generatePersianFirstName, generatePersianFullName, generatePersianLastName } from "../provider/person-fa";
+import {
+  generateFakeAddress,
+  generateFakeCity,
+  generateFakeCountry,
+} from "../provider/address";
+import {
+  generatePersianAddress,
+  generatePersianCity,
+  GeneratePersianCountry,
+} from "../provider/address-fa";
+import {
+  generateFakeDomainName,
+  generateFakeEmail,
+} from "../provider/Internet";
+import {
+  generateFakeFirstName,
+  generateFakeFullname,
+  generateFakeLastName,
+} from "../provider/person";
+import {
+  generateNationalCode,
+  generatePersianFirstName,
+  generatePersianFullName,
+  generatePersianLastName,
+} from "../provider/person-fa";
 import { ITableColumnType } from "./interfaces";
 
 export function generatedFakeField(
@@ -13,9 +33,8 @@ export function generatedFakeField(
   max_number_value?: string,
   decimal_number_value?: string
 ): ITableColumnType {
-
   if (empty_percentage !== "0" && empty_percentage !== "") {
-    if(empty_percentage === "100") return null;
+    if (empty_percentage === "100") return null;
 
     const data_chance = Math.random() * 100;
     if (data_chance < Number(empty_percentage)) {
@@ -85,7 +104,8 @@ export function generatedFakeNumber(
   const max_number = Number(max_number_value);
   const decimal_number_size = Number(decimal_number_value);
 
-  const random_number = Math.random() * (max_number - min_number + 1) + min_number;
+  const random_number =
+    Math.random() * (max_number - min_number + 1) + min_number;
 
   if (decimal_number_size === 0 || !decimal_number_size) {
     return Math.floor(random_number);
@@ -96,13 +116,13 @@ export function generatedFakeNumber(
   const random_number_parts = random_number_string.split(".");
   const decimal_part = random_number_parts[1];
 
-  if(decimal_part.length >= decimal_number_size) {
+  if (decimal_part.length >= decimal_number_size) {
     const decimal_part_string = decimal_part.substring(0, decimal_number_size);
-    return Number(random_number_parts+ "." + decimal_part_string);
+    return Number(random_number_parts[0] + "." + decimal_part_string);
   }
 
   // make decimal part
   const max_decimal = Math.pow(10, decimal_number_size);
   const new_decimal_part = Math.floor(Math.random() * max_decimal);
-  return Number(random_number_parts+ "." + new_decimal_part);
+  return Number(random_number_parts[0] + "." + new_decimal_part);
 }
