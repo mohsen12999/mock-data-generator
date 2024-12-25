@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { randomElement, randomNumber } from "./helper";
+import { convertToPersianNumber, randomElement, randomNumber } from "./helper";
 
 describe("testing randomElement function", () => {
   test("test making random element", () => {
@@ -18,3 +18,17 @@ describe("testing randomNumber function", () => {
     expect(number).toBeLessThanOrEqual(max);
   });
 });
+
+describe("testing convertToPersianNumber function", () => {
+  test("test converting number to persian number", () => {
+    const number = 1234567890;
+    const persianNumber = convertToPersianNumber(number);
+    expect(persianNumber).toEqual("۱۲۳۴۵۶۷۸۹۰");
+  });
+  test("test converting one number to persian number", () => {
+    const number = 1;
+    const persianNumber = convertToPersianNumber(number);
+    expect(persianNumber).toEqual("۱");
+  });
+});
+
