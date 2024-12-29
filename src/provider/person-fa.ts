@@ -158,3 +158,5 @@ const createControlCode = (area:string, core:string) => {
 
     return 11 - (sum % 11);
 }
+
+export const generatePersian2Gender = () => randomElement(["مرد", "زن"]);

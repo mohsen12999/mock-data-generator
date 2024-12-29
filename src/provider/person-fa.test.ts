@@ -1,6 +1,7 @@
 import { describe, expect, test } from "vitest";
 import {
   generateNationalCode,
+  generatePersian2Gender,
   generatePersianFirstName,
   generatePersianFullName,
   generatePersianLastName,
@@ -115,5 +116,14 @@ describe("testing generate fake national code", () => {
 
   test("test making new fake national code", () => {
     expect(id2).not.toBe(id);
+  });
+});
+
+describe("testing generate fake gender", () => {
+  const gender = generatePersian2Gender();
+
+  test("test making fake gender is not null", () => {
+    expect(gender).not.toBeNull();
+    expect(gender).toBeDefined();
   });
 });
