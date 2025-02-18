@@ -1,8 +1,8 @@
-# Generate Mock Data
+# Mock Data Generator
 
 A simple project designed to create mock datasets for testing, prototyping, or demonstrating data-driven applications. With customizable options, this tool allows you to generate realistic datasets quickly and efficiently.
 
-Most of ideas com from [FakerPHP](https://github.com/FakerPHP/Faker) and [Mackoroo](https://www.mockaroo.com/).
+Most of the ideas came from [FakerPHP](https://github.com/FakerPHP/Faker) and [Mackoroo](https://www.mockaroo.com/).
 
 click you can see live [demo](generate-mock-data.vercel.app).
 
@@ -37,38 +37,38 @@ npm run dev # or yarn dev
 
 ## TODO
 
-- [x] live version
-- [ ] simple ui
-- [x] save in file
-- [x] show output in textarea
-- [x] make sql data
-- [x] add more field button
-- [ ] csv data
-- [ ] sql command for create table
-- [x] make id for rows
-- [x] add range for data
-- [x] add option for empty
-- [ ] pwa for use as an app
-- [x] testing with github action
-- [ ] add date column
-- [ ] add boolean/flag
-- [ ] move/rearrange column
+- [x] Show live version
+- [ ] simple UI
+- [x] Make output data as a file
+- [x] Show output in textarea
+- [x] Make SQL data
+- [x] Add more field button
+- [ ] CSV data
+- [ ] SQL command for creating tables
+- [x] Making id for rows
+- [x] Add range for data
+- [x] Add option for empty
+- [ ] PWA for use as an app
+- [x] Testing with GitHub action
+- [ ] Add date column
+- [ ] Add boolean/flag
+- [ ] Move/rearrange column
 
-## Data TYpe
+## Data Type
 
 - done types
-  - name
-  - family
-  - website
-  - email
-  - address
-  - country
-  - city
-  - number
+  - Name
+  - Family
+  - Website
+  - Email
+  - Address
+  - Country
+  - City
+  - Number
 - remain type
-  - phone
-  - price
-  - gender
+  - Phone
+  - Price
+  - Gender
 
 ## Further Enhancements
 
